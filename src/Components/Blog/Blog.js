@@ -1,26 +1,30 @@
 import React from "react";
-import style from "./Blog.module.css";
+import classes from "./Blog.module.css";
 import Post from "../Post/Post";
 import Fullpost from "../Fullpost/Fullpost";
-import Newpost from "../Newpost/Newpost";
+import { Button } from "react-bootstrap";
 
-const Blog = (props) => {
+// import Newpost from "../Newpost/Newpost";
+
+const author = `Harry Potter`;
+const blog = (props) => {
   return (
-    <div className={style.Blog}>
-      <Post title="first post" content="lot of things inside here" />
-      <Post title="first post" content="lot of things inside here" />
-      <Post title="first post" content="lot of things inside here" />
-      <Post title="first post" content="lot of things inside here" />
-      <Post title="first post" content="lot of things inside here" />
-
-      {/* <section>
-        <Fullpost />
+    <div>
+      <section className={classes.Blog}>
+        <Post title="First post" author={author} />
+        <Post title="Second post" author={author} />
+        <Post title="Third post" author={author} />
       </section>
       <section>
+        <Fullpost />
+      </section>
+      <Button>gdsgds</Button>
+      {/* <section>
         <Newpost />
-      </section> */}
+      </section>{" "}
+      */}
     </div>
   );
 };
 
-export default Blog;
+export default blog;
