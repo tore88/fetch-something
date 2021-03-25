@@ -4,17 +4,13 @@
   margin: auto;
   border: 1px solid black;
   border-radius: 10px;
-  background-color: #f3ebe6;
+  background-color: #c6eeac;
+  overflow: auto;
+  scroll-behavior: smooth;
+  text-align: center;
   display: grid;
-  grid-template-columns: 2rem, 5rem, 2rem;
+  gap: 8px;
 }
-.Title {
-}
-.Content {
-  white-space: wrap;
-}
-.Button {
-  width: 100px;
-  height: 40px;
-  background-color: rgb(110, 110, 206);
+.myButton {
+  margin: auto;
 }

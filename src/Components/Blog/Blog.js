@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./Blog.module.css";
 import Post from "../Post/Post";
 import Fullpost from "../Fullpost/Fullpost";
+import Newpost from "../Newpost/Newpost";
 import { Button } from "react-bootstrap";
 
 // import Newpost from "../Newpost/Newpost";
@@ -18,11 +19,9 @@ const blog = (props) => {
       <section>
         <Fullpost />
       </section>
-      <Button>gdsgds</Button>
-      {/* <section>
+      <section>
         <Newpost />
-      </section>{" "}
-      */}
+      </section>
     </div>
   );
 };

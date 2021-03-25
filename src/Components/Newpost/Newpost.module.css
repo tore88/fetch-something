@@ -1,0 +1,18 @@
+.mycontainer {
+  width: 90%;
+  margin: 2rem auto;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #c6eeac;
+}
+.input {
+  border-radius: 5px;
+  width: 20rem;
+}
+.textarea {
+  width: 300px;
+  border-radius: 5px;
+}
+.button {
+  margin: 5px;
+}

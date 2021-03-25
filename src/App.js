@@ -1,11 +1,9 @@
-import classes from "./App.module.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-
+import React from "react";
 import Blog from "./Components/Blog/Blog";
 
 function App() {
   return (
-    <div className={classes.App}>
+    <div>
       <Blog />
     </div>
   );
