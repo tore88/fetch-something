@@ -21,6 +21,9 @@ class Fullpost extends Component {
             console.log(response.data.title);
             this.setState({ laodedPost: response.data });
             console.log(this.state.laodedPost.body);
+          })
+          .catch((error) => {
+            alert("Someting went wrong");
           });
       }
     }

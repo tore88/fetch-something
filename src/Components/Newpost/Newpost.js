@@ -70,10 +70,3 @@ class Newpost extends Component {
 }
 
 export default Newpost;
-
-/* <select value={this.state.author} id="author">
-              Select Author
-              <option value="first Author">first Author</option>
-              <option value="second Author">second Author</option>
-              <option value="third Author">third Author</option>
-            </select> */
