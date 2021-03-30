@@ -46,9 +46,14 @@ class Newpost extends Component {
             <div className="col-sm-12">
               <input
                 type="text"
-                value={this.state.title}
+                value={this.state.post.title}
                 onChange={(event) =>
-                  this.setState({ title: event.target.value })
+                  this.setState({
+                    post: {
+                      ...this.state.post,
+                      title: event.target.value,
+                    },
+                  })
                 }
                 className={classes.input}
               />
@@ -73,7 +78,7 @@ class Newpost extends Component {
           </div>
           <div className="row">
             <div className="col-sm-12">
-              {/* <div>
+              <div>
                 <label>Author</label>
 
                 <select
@@ -87,7 +92,7 @@ class Newpost extends Component {
                   <option value="Author2">Author2</option>
                   <option value="Author3">Author3</option>
                 </select>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
