@@ -18,16 +18,21 @@ class Blog extends Component {
     this.setState({ selectedPost: selectedPost });
   };
   componentDidMount() {
-    axios.get("https://jsonplaceholder.typicode.com/posts").then((response) => {
-      const posts = response.data.slice(0, 10);
-      const newPost = posts.map((post) => {
-        return {
-          ...post,
-          author: `n/a`,
-        };
+    axios
+      .get("https://jsonplaceholder.typicode.com/posts")
+      .then((response) => {
+        const posts = response.data.slice(0, 10);
+        const newPost = posts.map((post) => {
+          return {
+            ...post,
+            author: `n/a`,
+          };
+        });
+        this.setState({ post: newPost });
+      })
+      .catch((error) => {
+        alert("Someting went wrong");
       });
-      this.setState({ post: newPost });
-    });
   }
   doesShow = () => {
     this.setState({ show: !this.state.show });
@@ -47,6 +52,8 @@ class Blog extends Component {
           />
         );
       });
+    }
+    if (this.state.stateError) {
     }
 
     return (
