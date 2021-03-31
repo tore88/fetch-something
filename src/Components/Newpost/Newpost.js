@@ -50,8 +50,20 @@ class Newpost extends Component {
             <div className="col-sm-12">
               <input
                 type="text"
+<<<<<<< HEAD
                 value={this.state.title}
                 onChange={(event) => this.titleChange(event)}
+=======
+                value={this.state.post.title}
+                onChange={(event) =>
+                  this.setState({
+                    post: {
+                      ...this.state.post,
+                      title: event.target.value,
+                    },
+                  })
+                }
+>>>>>>> 0d99583f31f5500d4b44856b3a9695ef0022ebb7
                 className={classes.input}
               />
             </div>
