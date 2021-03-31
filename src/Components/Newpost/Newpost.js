@@ -5,29 +5,33 @@ import axios from "axios";
 
 class Newpost extends Component {
   state = {
-    post: {
-      title: `title`,
-      body: `text`,
-      author: `Author`,
-    },
+    title: `title`,
+    body: `text`,
+    author: `author`,
   };
 
-  sendDataHadler() {
-    const data = { ...this.state.post };
-    // {
-    //   title: this.state.title,
-    //   body: this.state.body,
-    //   author: this.state.author,
-    // };
-    console.log(data);
+  titleChange(event) {
+    const myTitle = event.target.value;
+    this.setState({ title: myTitle });
+  }
+  textChange(event) {
+    const myText = event.target.value;
+    this.setState({ body: myText });
+  }
+  authorChange(event) {
+    const myAuthor = event.target.value;
+    this.setState({ author: myAuthor });
+  }
 
-    // axios
-    //   .post("https://jsonplaceholder.typicode.com/posts", data)
-    //   .then((response) => console.log(response));
+  sendDataHadler() {
+    const myData = { ...this.state };
+
+    axios
+      .post("https://jsonplaceholder.typicode.com/posts", myData)
+      .then((response) => console.log(response));
   }
 
   render() {
-    console.log(this.state.post);
     return (
       <div className={classes.myContainer}>
         <div className="container">
@@ -47,9 +51,7 @@ class Newpost extends Component {
               <input
                 type="text"
                 value={this.state.title}
-                onChange={(event) =>
-                  this.setState({ title: event.target.value })
-                }
+                onChange={(event) => this.titleChange(event)}
                 className={classes.input}
               />
             </div>
@@ -64,36 +66,35 @@ class Newpost extends Component {
               <textarea
                 rows="5"
                 value={this.state.body}
-                onChange={(event) =>
-                  this.setState({ body: event.target.value })
-                }
+                onChange={(event) => this.textChange(event)}
                 className={classes.textarea}
               />
             </div>
           </div>
           <div className="row">
             <div className="col-sm-12">
-              {/* <div>
+              <div>
                 <label>Author</label>
 
                 <select
                   className="form-select"
                   value={this.state.author}
-                  onChange={(event) =>
-                    this.setState({ author: event.target.value })
-                  }
+                  onChange={(event) => this.authorChange(event)}
                 >
                   <option value="Author1">Author1</option>
                   <option value="Author2">Author2</option>
                   <option value="Author3">Author3</option>
                 </select>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
         <div className="row">
           <div className="col-sm-12">
-            <Button className={classes.button} onClick={this.sendDataHadler}>
+            <Button
+              className={classes.button}
+              onClick={this.sendDataHadler.bind(this)}
+            >
               Add post
             </Button>
           </div>
