@@ -23,13 +23,11 @@ class Newpost extends Component {
     this.setState({ author: myAuthor });
   }
 
-  sendDataHadler() {
+  sendDataHadler = () => {
     const myData = { ...this.state };
 
-    axios
-      .post("https://jsonplaceholder.typicode.com/posts", myData)
-      .then((response) => console.log(response));
-  }
+    axios.post("/posts", myData).then((response) => console.log(response));
+  };
 
   render() {
     return (
@@ -91,10 +89,7 @@ class Newpost extends Component {
         </div>
         <div className="row">
           <div className="col-sm-12">
-            <Button
-              className={classes.button}
-              onClick={this.sendDataHadler.bind(this)}
-            >
+            <Button className={classes.button} onClick={this.sendDataHadler}>
               Add post
             </Button>
           </div>

@@ -1,7 +1,7 @@
 .myContainer {
   margin-top: 2rem;
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 1rem;
   background-color: #c6eeac;
 }
 .input {
